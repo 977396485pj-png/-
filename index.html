@@ -39,11 +39,6 @@
       padding: 10px;
       cursor: pointer;
       margin: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .category:hover {
-      background-color: #ffcc00;
     }
 
     .category h2 {
@@ -54,12 +49,10 @@
     .subcategory {
       display: none;
       margin-top: 10px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
     }
 
     .product {
+      margin: 10px 0;
       padding: 10px;
       background-color: #f9f9f9;
       border-radius: 5px;
@@ -234,7 +227,7 @@
     function toggleSubcategory(categoryId) {
       const category = document.getElementById(categoryId);
       if (category.style.display === 'none' || category.style.display === '') {
-        category.style.display = 'grid';
+        category.style.display = 'block';
       } else {
         category.style.display = 'none';
       }
