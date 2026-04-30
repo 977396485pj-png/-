@@ -1,108 +1,229 @@
-<div class="category">
-  <h2>ChatGPT Plus</h2>
-  <div class="product">
-    <h3>ChatGPT Plus 正规充值一月</h3>
-    <p>价格：￥170</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>ChatGPT Plus 特价一月</h3>
-    <p>价格：￥128</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>ChatGPT Plus 共享一个月卡</h3>
-    <p>价格：￥65</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI科技城</title>
+  <style>
+    /* 样式设置 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #f6c700;
+      padding: 10px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .category-container {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 20px;
+    }
+    .category {
+      width: 150px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      cursor: pointer;
+    }
+    .category h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .products {
+      display: none;
+      margin-top: 10px;
+    }
+    .product {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .product h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .product p {
+      margin: 5px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .announcement {
+      background-color: #ffef00;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .announcement h2 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
 
-<div class="category">
-  <h2>ChatGPT Pro</h2>
-  <div class="product">
-    <h3>ChatGPT Pro 正价5倍</h3>
-    <p>价格：￥820</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>ChatGPT Pro 特价5倍</h3>
-    <p>价格：￥530</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-</div>
+  <header>
+    <h1>AI科技城</h1>
+  </header>
 
-<div class="category">
-  <h2>Claude</h2>
-  <div class="product">
-    <h3>Claude 普号</h3>
-    <p>价格：￥35</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
+  <div class="announcement">
+    <h2>【公告】5年老店，超高性价比，低价实惠带品质保障。任意问题均可私信老板，售后无忧。微信：19268403019，QQ：3750786731</h2>
   </div>
-  <div class="product">
-    <h3>Claude Pro</h3>
-    <p>价格：￥168</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-</div>
 
-<div class="category">
-  <h2>ChatGPT Share 六合一号池</h2>
-  <div class="product">
-    <h3>天卡</h3>
-    <p>价格：￥5</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>周卡</h3>
-    <p>价格：￥30</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>月卡</h3>
-    <p>价格：￥90</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>季卡</h3>
-    <p>价格：￥220</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>半年卡</h3>
-    <p>价格：￥410</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-  <div class="product">
-    <h3>一年卡</h3>
-    <p>价格：￥720</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-</div>
+  <div class="category-container">
+    <!-- ChatGPT Plus Category -->
+    <div class="category" onclick="toggleCategory('chatgpt-plus')">
+      <h2>ChatGPT Plus</h2>
+      <div id="chatgpt-plus" class="products">
+        <div class="product">
+          <h3>ChatGPT Plus 正规充值一月</h3>
+          <p>价格：￥170</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>ChatGPT Plus 特价一月</h3>
+          <p>价格：￥128</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>ChatGPT Plus 共享一个月卡</h3>
+          <p>价格：￥65</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+      </div>
+    </div>
 
-<div class="category">
-  <h2>Super Grok</h2>
-  <div class="product">
-    <h3>Super Grok 一个月</h3>
-    <p>价格：￥188</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-</div>
+    <!-- ChatGPT Pro Category -->
+    <div class="category" onclick="toggleCategory('chatgpt-pro')">
+      <h2>ChatGPT Pro</h2>
+      <div id="chatgpt-pro" class="products">
+        <div class="product">
+          <h3>ChatGPT Pro 正价5倍</h3>
+          <p>价格：￥820</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>ChatGPT Pro 特价5倍</h3>
+          <p>价格：￥530</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+      </div>
+    </div>
 
-<div class="category">
-  <h2>普通账号</h2>
-  <div class="product">
-    <h3>Google账号</h3>
-    <p>价格：￥35</p>
-    <button onclick="copyContact('19268403019')">立即购买</button>
-  </div>
-</div>
+    <!-- Claude Category -->
+    <div class="category" onclick="toggleCategory('claude')">
+      <h2>Claude</h2>
+      <div id="claude" class="products">
+        <div class="product">
+          <h3>Claude 普号</h3>
+          <p>价格：￥35</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>Claude Pro</h3>
+          <p>价格：￥168</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+      </div>
+    </div>
 
-<script>
-  function copyContact(text){
-    navigator.clipboard.writeText(text).then(() => {
-      alert("联系方式已复制：" + text);
-    }).catch(() => {
-      alert("请手动复制：" + text);
-    });
-  }
-</script>
+    <!-- ChatGPT Share 六合一号池 Category -->
+    <div class="category" onclick="toggleCategory('chatgpt-share')">
+      <h2>ChatGPT Share</h2>
+      <div id="chatgpt-share" class="products">
+        <div class="product">
+          <h3>天卡</h3>
+          <p>价格：￥5</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>周卡</h3>
+          <p>价格：￥30</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>月卡</h3>
+          <p>价格：￥90</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>季卡</h3>
+          <p>价格：￥220</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>半年卡</h3>
+          <p>价格：￥410</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>一年卡</h3>
+          <p>价格：￥720</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Super Grok Category -->
+    <div class="category" onclick="toggleCategory('super-grok')">
+      <h2>Super Grok</h2>
+      <div id="super-grok" class="products">
+        <div class="product">
+          <h3>Super Grok 一个月</h3>
+          <p>价格：￥188</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 普通账号 Category -->
+    <div class="category" onclick="toggleCategory('common-account')">
+      <h2>普通账号</h2>
+      <div id="common-account" class="products">
+        <div class="product">
+          <h3>Google账号</h3>
+          <p>价格：￥35</p>
+          <button onclick="copyContact('19268403019')">立即购买</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleCategory(categoryId) {
+      const category = document.getElementById(categoryId);
+      if (category.style.display === 'none') {
+        category.style.display = 'block';
+      } else {
+        category.style.display = 'none';
+      }
+    }
+
+    function copyContact(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("联系方式已复制：" + text);
+      }).catch(() => {
+        alert("请手动复制：" + text);
+      });
+    }
+  </script>
+</body>
+</html>
