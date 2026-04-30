@@ -1,217 +1,105 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 科技城</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #ffcc00;
-            padding: 10px;
-            text-align: center;
-            color: #fff;
-            font-size: 18px;
-        }
-        .container {
-            padding: 20px;
-        }
-        .category {
-            margin-bottom: 30px;
-        }
-        .category h2 {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .product {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .product .name {
-            font-size: 18px;
-            color: #333;
-        }
-        .product .price {
-            font-size: 18px;
-            color: #f44336;
-            font-weight: bold;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-        .notice {
-            background-color: #ffeb3b;
-            padding: 15px;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #333;
-            font-size: 18px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI科技城</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #FFEB3B;
+      padding: 10px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .announcement {
+      background-color: #FFEB3B;
+      padding: 10px;
+      text-align: center;
+    }
+    .announcement p {
+      margin: 0;
+      font-size: 16px;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .product-card {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      width: 250px;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .product-card h2 {
+      font-size: 18px;
+      color: #444;
+    }
+    .product-card p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+    .buy-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .buy-button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>AI 科技城</h1>
-    <p>欢迎光临！提供最优质的 ChatGPT Plus 服务。</p>
+  <h1>AI科技城</h1>
 </header>
 
-<div class="container">
-    <!-- 公告 -->
-    <div class="notice">
-        <p><strong>心下单！</strong><br>
-        【售后】任何问题均可私信老板，售后无忧<br>
-        微信：19268403019（优先微信联系）<br>
-        QQ：3750786731</p>
-    </div>
-
-    <!-- ChatGPT Plus 独享 -->
-    <div class="category">
-        <h2>ChatGPT Plus 独享</h2>
-        <div class="product">
-            <div class="name">正规充值一月</div>
-            <div class="price">¥170</div>
-        </div>
-        <div class="product">
-            <div class="name">特价一月</div>
-            <div class="price">¥128</div>
-        </div>
-        <div class="product">
-            <div class="name">ChatGPTgo 一年</div>
-            <div class="price">¥450</div>
-        </div>
-    </div>
-
-    <!-- ChatGPT Plus 共享 -->
-    <div class="category">
-        <h2>ChatGPT Plus 共享</h2>
-        <div class="product">
-            <div class="name">一个月</div>
-            <div class="price">¥65</div>
-        </div>
-        <div class="product">
-            <div class="name">三个月</div>
-            <div class="price">¥165</div>
-        </div>
-        <div class="product">
-            <div class="name">六个月</div>
-            <div class="price">¥290</div>
-        </div>
-        <div class="product">
-            <div class="name">十二个月</div>
-            <div class="price">¥550</div>
-        </div>
-    </div>
-
-    <!-- ChatGPT Pro -->
-    <div class="category">
-        <h2>ChatGPT Pro</h2>
-        <div class="product">
-            <div class="name">正价 5倍</div>
-            <div class="price">¥820</div>
-        </div>
-        <div class="product">
-            <div class="name">正价 20倍</div>
-            <div class="price">¥1600</div>
-        </div>
-        <div class="product">
-            <div class="name">特价 5倍</div>
-            <div class="price">¥530</div>
-        </div>
-        <div class="product">
-            <div class="name">特价 20倍</div>
-            <div class="price">¥980</div>
-        </div>
-    </div>
-
-    <!-- Gemini Pro -->
-    <div class="category">
-        <h2>Geminipro</h2>
-        <div class="product">
-            <div class="name">一年</div>
-            <div class="price">¥128</div>
-        </div>
-    </div>
-
-    <!-- Google 账号 -->
-    <div class="category">
-        <h2>Google 账号</h2>
-        <div class="product">
-            <div class="name">Google 账号</div>
-            <div class="price">¥35</div>
-        </div>
-    </div>
-
-    <!-- Claude Pro -->
-    <div class="category">
-        <h2>Claude Pro</h2>
-        <div class="product">
-            <div class="name">Claude 普号</div>
-            <div class="price">¥35</div>
-        </div>
-        <div class="product">
-            <div class="name">Claude Pro 特价</div>
-            <div class="price">¥168</div>
-        </div>
-    </div>
-
-    <!-- ChatGPT Share 六合一号池 -->
-    <div class="category">
-        <h2>ChatGPT Share 六合一号池</h2>
-        <div class="product">
-            <div class="name">天卡</div>
-            <div class="price">¥5</div>
-        </div>
-        <div class="product">
-            <div class="name">周卡（激活码）</div>
-            <div class="price">¥30</div>
-        </div>
-        <div class="product">
-            <div class="name">月卡（激活码）</div>
-            <div class="price">¥90</div>
-        </div>
-        <div class="product">
-            <div class="name">季卡（激活码）</div>
-            <div class="price">¥220</div>
-        </div>
-        <div class="product">
-            <div class="name">半年（激活码）</div>
-            <div class="price">¥410</div>
-        </div>
-        <div class="product">
-            <div class="name">一年（激活码）</div>
-            <div class="price">¥720</div>
-        </div>
-    </div>
-
-    <!-- Super Grok -->
-    <div class="category">
-        <h2>Super Grok</h2>
-        <div class="product">
-            <div class="name">一个月</div>
-            <div class="price">¥188</div>
-        </div>
-    </div>
+<div class="announcement">
+  <p>【公告】<br> 5年老店， 全网最具性价比， 超高质量，纯手工注册充值，低价实惠带质量保障。</p>
+  <p>【售后】任何问题均可私信老板，售后无忧<br> 微信：19268403019 (优先微信联系)<br> QQ：3750786731</p>
 </div>
 
-<footer>
-    <p>&copy; 2023 AI 科技城 - 所有商品均为正版，支持多种支付方式。</p>
-</footer>
+<div class="product-container">
+  <div class="product-card">
+    <h2>ChatGPT Plus 正规充值卡密</h2>
+    <p>价格: ¥150</p>
+    <p>库存: 充足</p>
+    <a href="https://qr.alipay.com/fkx163781mj6oyfpigqp28c" class="buy-button" target="_blank">立即购买</a>
+  </div>
+  <div class="product-card">
+    <h2>ChatGPT Plus 共享账号</h2>
+    <p>价格: ¥108</p>
+    <p>库存: 充足</p>
+    <a href="https://qr.alipay.com/fkx163781mj6oyfpigqp28c" class="buy-button" target="_blank">立即购买</a>
+  </div>
+  <div class="product-card">
+    <h2>ChatGPT Plus 人工代充</h2>
+    <p>价格: ¥158</p>
+    <p>库存: 充足</p>
+    <a href="https://qr.alipay.com/fkx163781mj6oyfpigqp28c" class="buy-button" target="_blank">立即购买</a>
+  </div>
+</div>
 
 </body>
 </html>
