@@ -120,4 +120,135 @@
           <button onclick="buyProduct('chatgpt-plus-128')">立即购买</button>
         </div>
         <div class="product">
-          <h
+          <h3>ChatGPT Plus 共享一个月卡</h3>
+          <p>价格：￥65</p>
+          <button onclick="buyProduct('chatgpt-plus-shared')">立即购买</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ChatGPT Pro Category -->
+    <div class="category" onclick="toggleSubcategory('chatgpt-pro')">
+      <h2>ChatGPT Pro</h2>
+      <div id="chatgpt-pro" class="subcategory">
+        <div class="product">
+          <h3>ChatGPT Pro 正价5倍</h3>
+          <p>价格：￥820</p>
+          <button onclick="buyProduct('chatgpt-pro-820')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>ChatGPT Pro 特价5倍</h3>
+          <p>价格：￥530</p>
+          <button onclick="buyProduct('chatgpt-pro-530')">立即购买</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Claude Category -->
+    <div class="category" onclick="toggleSubcategory('claude')">
+      <h2>Claude</h2>
+      <div id="claude" class="subcategory">
+        <div class="product">
+          <h3>Claude 普号</h3>
+          <p>价格：￥35</p>
+          <button onclick="buyProduct('claude-35')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>Claude Pro</h3>
+          <p>价格：￥168</p>
+          <button onclick="buyProduct('claude-pro')">立即购买</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ChatGPT Share Category -->
+    <div class="category" onclick="toggleSubcategory('chatgpt-share')">
+      <h2>ChatGPT Share</h2>
+      <div id="chatgpt-share" class="subcategory">
+        <div class="product">
+          <h3>天卡</h3>
+          <p>价格：￥5</p>
+          <button onclick="buyProduct('chatgpt-share-tian')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>周卡</h3>
+          <p>价格：￥30</p>
+          <button onclick="buyProduct('chatgpt-share-week')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>月卡</h3>
+          <p>价格：￥90</p>
+          <button onclick="buyProduct('chatgpt-share-month')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>季卡</h3>
+          <p>价格：￥220</p>
+          <button onclick="buyProduct('chatgpt-share-season')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>半年卡</h3>
+          <p>价格：￥410</p>
+          <button onclick="buyProduct('chatgpt-share-halfyear')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>一年卡</h3>
+          <p>价格：￥720</p>
+          <button onclick="buyProduct('chatgpt-share-year')">立即购买</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Super Grok Category -->
+    <div class="category" onclick="toggleSubcategory('super-grok')">
+      <h2>Super Grok</h2>
+      <div id="super-grok" class="subcategory">
+        <div class="product">
+          <h3>Super Grok 一个月</h3>
+          <p>价格：￥188</p>
+          <button onclick="buyProduct('super-grok')">立即购买</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 普通账号 Category -->
+    <div class="category" onclick="toggleSubcategory('common-account')">
+      <h2>普通账号</h2>
+      <div id="common-account" class="subcategory">
+        <div class="product">
+          <h3>Google账号</h3>
+          <p>价格：￥35</p>
+          <button onclick="buyProduct('google-account')">立即购买</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSubcategory(categoryId) {
+      const category = document.getElementById(categoryId);
+      if (category.style.display === 'none' || category.style.display === '') {
+        category.style.display = 'block';
+      } else {
+        category.style.display = 'none';
+      }
+    }
+
+    function buyProduct(productId) {
+      // Alipay Payment
+      window.location.href = 'https://qr.alipay.com/fkx163781mj6oyfpigqp28c'; // Alipay link
+      setTimeout(() => {
+        alert("感谢购买！\n请添加微信19268403019进行账户激活。\n点击按钮复制微信号码");
+        copyContact('19268403019');
+      }, 5000);
+    }
+
+    function copyContact(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("联系方式已复制：" + text);
+      }).catch(() => {
+        alert("请手动复制：" + text);
+      });
+    }
+  </script>
+</body>
+</html>
