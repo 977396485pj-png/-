@@ -1,45 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI科技城</title>
+
 <style>
-body{margin:0;background:#0f172a;color:white;font-family:Arial;text-align:center}
-.header{padding:40px 20px}
-.logo{font-size:55px}
-.card{background:#1e293b;margin:15px;padding:20px;border-radius:18px}
-.btn{display:inline-block;margin-top:10px;padding:12px 25px;background:#22c55e;color:white;text-decoration:none;border-radius:12px}
-.notice{color:#94a3b8}
+body{
+  background:#0f172a;
+  color:white;
+  font-family:sans-serif;
+  margin:0;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+}
+
+.card{
+  background:#1e293b;
+  padding:15px;
+  margin:10px;
+  border-radius:10px;
+}
+
+.price{
+  color:#22c55e;
+  font-size:18px;
+}
+
+.tag{
+  background:red;
+  padding:3px 6px;
+  border-radius:5px;
+  font-size:12px;
+  margin-left:5px;
+}
+
+button{
+  background:#3b82f6;
+  border:none;
+  padding:10px;
+  color:white;
+  border-radius:6px;
+  margin-top:10px;
+}
 </style>
 </head>
+
 <body>
 
-<div class="header">
-  <div class="logo">🤖</div>
-  <h1>AI科技城</h1>
-  <p class="notice">AI工具导航｜账号服务｜教程资源</p>
-</div>
+<h1 id="title">加载中...</h1>
+<p id="notice"></p>
 
-<div class="card">
-  <h2>🔥 ChatGPT Plus</h2>
-  <p>稳定账号服务，新手可咨询</p>
-  <a class="btn" href="javascript:alert('联系微信：这里改成你的微信号')">立即咨询</a>
-</div>
+<div id="list"></div>
 
-<div class="card">
-  <h2>🎨 AI绘画工具</h2>
-  <p>Midjourney / AI绘图资源入口</p>
-  <a class="btn" href="javascript:alert('联系微信：这里改成你的微信号')">立即了解</a>
-</div>
+<script>
+fetch("products.json")
+.then(res => res.json())
+.then(data => {
 
-<div class="card">
-  <h2>📚 AI教程导航</h2>
-  <p>适合新手快速入门AI工具</p>
-  <a class="btn" href="https://chat.openai.com">进入工具</a>
-</div>
+  document.getElementById("title").innerText = data.siteName;
+  document.getElementById("notice").innerText = data.notice;
 
-<p class="notice">本站仅提供AI工具导航与咨询服务</p>
+  let html = "";
+
+  data.products.forEach(p => {
+    html += `
+    <div class="card">
+      <h3>${p.name} <span class="tag">${p.tag || ""}</span></h3>
+      <p>${p.desc}</p>
+      <p class="price">${p.price}</p>
+      <button onclick="alert('${data.contact}')">联系购买</button>
+    </div>
+    `;
+  });
+
+  document.getElementById("list").innerHTML = html;
+});
+</script>
 
 </body>
 </html>
