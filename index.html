@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI科技城</title>
   <style>
+    /* 基本样式 */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -22,42 +23,45 @@
       margin: 0;
     }
 
-    .announcement {
-      background-color: #ffef00;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .announcement h2 {
-      margin: 0;
-    }
-
-    .product-container {
+    .category-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
       padding: 20px;
     }
 
-    .product {
+    .category {
       width: 200px;
       text-align: center;
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       padding: 10px;
-      margin: 10px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      margin: 10px;
     }
 
-    .product:hover {
-      background-color: #ffcc00;
+    .category h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .subcategory {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .product {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
     .product h3 {
+      margin: 0;
       font-size: 16px;
-      margin: 10px 0;
     }
 
     .product p {
@@ -77,143 +81,43 @@
       background-color: #45a049;
     }
 
-    .category-container {
-      display: flex;
-      justify-content: space-between;
+    .announcement {
+      background-color: #ffef00;
       padding: 20px;
-    }
-
-    .category {
-      width: 200px;
       text-align: center;
-      padding: 10px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
+      margin-bottom: 20px;
     }
 
-    .category h2 {
-      font-size: 18px;
-      margin: 10px 0;
+    .announcement h2 {
+      margin: 0;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>AI科技城</h1>
   </header>
 
   <div class="announcement">
-    <h2>【公告】5年老店，超高性价比，低价实惠带品质保障。微信：19268403019，QQ：3750786731</h2>
-    <h2>【号池ChatShare.Art】，六大AI Plus会员模型，具体介绍点我查看，网址：<a href="http://chatshare.art" target="_blank">chatshare.art</a></h2>
+    <h2>【公告】5年老店，超高性价比，低价实惠带品质保障。任意问题均可私信老板，售后无忧。微信：19268403019，QQ：3750786731<br>
+    【号池ChatShare.Art】，六大AI Plus会员模型，具体介绍点我查看，网址：<a href="http://chatshare.art" target="_blank">chatshare.art</a></h2>
   </div>
 
   <div class="category-container">
-    <!-- ChatGPT Plus -->
-    <div class="category">
+    <!-- ChatGPT Plus Category -->
+    <div class="category" onclick="toggleSubcategory('chatgpt-plus')">
       <h2>ChatGPT Plus</h2>
-      <div class="product">
-        <h3>ChatGPT Plus 正规充值一月</h3>
-        <p>价格：￥170</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>ChatGPT Plus 特价一月</h3>
-        <p>价格：￥128</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>ChatGPT Plus 共享一个月卡</h3>
-        <p>价格：￥65</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-    </div>
-
-    <!-- ChatGPT Pro -->
-    <div class="category">
-      <h2>ChatGPT Pro</h2>
-      <div class="product">
-        <h3>ChatGPT Pro 正价5倍</h3>
-        <p>价格：￥820</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>ChatGPT Pro 特价5倍</h3>
-        <p>价格：￥530</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-    </div>
-
-    <!-- Claude -->
-    <div class="category">
-      <h2>Claude</h2>
-      <div class="product">
-        <h3>Claude 普号</h3>
-        <p>价格：￥35</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>Claude Pro</h3>
-        <p>价格：￥168</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-    </div>
-
-    <!-- ChatGPT Share -->
-    <div class="category">
-      <h2>ChatGPT Share</h2>
-      <div class="product">
-        <h3>天卡</h3>
-        <p>价格：￥5</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>周卡</h3>
-        <p>价格：￥30</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>月卡</h3>
-        <p>价格：￥90</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>季卡</h3>
-        <p>价格：￥220</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>半年卡</h3>
-        <p>价格：￥410</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-      <div class="product">
-        <h3>一年卡</h3>
-        <p>价格：￥720</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-    </div>
-
-    <!-- Super Grok -->
-    <div class="category">
-      <h2>Super Grok</h2>
-      <div class="product">
-        <h3>Super Grok 一个月</h3>
-        <p>价格：￥188</p>
-        <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function makePayment(url) {
-      window.location.href = url;
-      setTimeout(function() {
-        alert("付款成功！ 请添加微信：19268403019 进行确认。");
-      }, 2000);
-    }
-  </script>
-
-</body>
-</html>
+      <div id="chatgpt-plus" class="subcategory">
+        <div class="product">
+          <h3>ChatGPT Plus 正规充值一月</h3>
+          <p>价格：￥170</p>
+          <button onclick="buyProduct('chatgpt-plus-170')">立即购买</button>
+        </div>
+        <div class="product">
+          <h3>ChatGPT Plus 特价一月</h3>
+          <p>价格：￥128</p>
+          <button onclick="buyProduct('chatgpt-plus-128')">立即购买</button>
+        </div>
+        <div class="product">
+          <h
