@@ -39,6 +39,11 @@
       padding: 10px;
       cursor: pointer;
       margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .category:hover {
+      background-color: #ffcc00;
     }
 
     .category h2 {
@@ -49,10 +54,12 @@
     .subcategory {
       display: none;
       margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
 
     .product {
-      margin: 10px 0;
       padding: 10px;
       background-color: #f9f9f9;
       border-radius: 5px;
@@ -91,6 +98,34 @@
     .announcement h2 {
       margin: 0;
     }
+
+    /* 弹框样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .modal-content button {
+      background-color: #008CBA;
+    }
+
+    .modal-content button:hover {
+      background-color: #005f73;
+    }
   </style>
 </head>
 <body>
@@ -112,17 +147,17 @@
         <div class="product">
           <h3>ChatGPT Plus 正规充值一月</h3>
           <p>价格：￥170</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>ChatGPT Plus 特价一月</h3>
           <p>价格：￥128</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>ChatGPT Plus 共享一个月卡</h3>
           <p>价格：￥65</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
       </div>
     </div>
@@ -134,12 +169,12 @@
         <div class="product">
           <h3>ChatGPT Pro 正价5倍</h3>
           <p>价格：￥820</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>ChatGPT Pro 特价5倍</h3>
           <p>价格：￥530</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
       </div>
     </div>
@@ -151,12 +186,12 @@
         <div class="product">
           <h3>Claude 普号</h3>
           <p>价格：￥35</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>Claude Pro</h3>
           <p>价格：￥168</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
       </div>
     </div>
@@ -168,32 +203,32 @@
         <div class="product">
           <h3>天卡</h3>
           <p>价格：￥5</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>周卡</h3>
           <p>价格：￥30</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>月卡</h3>
           <p>价格：￥90</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>季卡</h3>
           <p>价格：￥220</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>半年卡</h3>
           <p>价格：￥410</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
         <div class="product">
           <h3>一年卡</h3>
           <p>价格：￥720</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
       </div>
     </div>
@@ -205,7 +240,7 @@
         <div class="product">
           <h3>Super Grok 一个月</h3>
           <p>价格：￥188</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
       </div>
     </div>
@@ -217,9 +252,18 @@
         <div class="product">
           <h3>Google账号</h3>
           <p>价格：￥35</p>
-          <button onclick="copyContact('19268403019')">立即购买</button>
+          <button onclick="makePayment('https://qr.alipay.com/fkx163781mj6oyfpigqp28c')">立即购买</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- 弹框 -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <h3>付款成功！</h3>
+      <p>因为本产品账号现开，麻烦添加微信 19268403019 进行或许。</p>
+      <button onclick="copyContact('19268403019')">复制微信</button>
     </div>
   </div>
 
@@ -227,10 +271,17 @@
     function toggleSubcategory(categoryId) {
       const category = document.getElementById(categoryId);
       if (category.style.display === 'none' || category.style.display === '') {
-        category.style.display = 'block';
+        category.style.display = 'grid';
       } else {
         category.style.display = 'none';
       }
+    }
+
+    function makePayment(url) {
+      window.location.href = url;
+      setTimeout(function() {
+        document.getElementById("paymentModal").style.display = "flex";
+      }, 2000); // 模拟支付完成后的弹框显示
     }
 
     function copyContact(text) {
