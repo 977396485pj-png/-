@@ -1,68 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI商城</title>
+    <title>AI科技城</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fbcfe8;
+            padding: 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
         }
         .announcement {
-            background-color: #ffeb3b;
-            padding: 20px;
+            background-color: #ffdd57;
+            color: red;
+            padding: 10px;
             text-align: center;
+            font-size: 18px;
             font-weight: bold;
         }
-        .products {
-            margin-top: 20px;
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
         }
-        .product {
-            border: 1px solid #ddd;
+        .product-card {
+            background-color: white;
             padding: 15px;
-            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: 250px;
             text-align: center;
         }
-        .product img {
-            max-width: 100px;
-            height: auto;
+        .product-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .product-card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .product-card p {
+            font-size: 16px;
+        }
+        .product-card .price {
+            font-size: 18px;
+            color: green;
+            font-weight: bold;
+        }
+        .contact-info {
+            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        footer {
+            background-color: #fbcfe8;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>AI科技城</h1>
+    </header>
 
-    <!-- 公告 -->
     <div class="announcement">
-        5年老店，全网最具性价比，超高质量，纯手工注册充值，低价实惠带质保。正式公司可开发票，放心下单！<br>
+        心下单！<br>
         【售后】任何问题均可私信老板，售后无忧<br>
         微信：19268403019（优先微信联系）<br>
         QQ：3750786731
     </div>
 
-    <!-- 商品区 -->
-    <div class="products">
-        <!-- 示例商品 -->
-        <div class="product">
-            <img src="path_to_image.jpg" alt="ChatGPT Plus"/>
-            <h2>ChatGPT Plus 正规充值卡密</h2>
-            <p>价格: ¥150</p>
-            <p>库存: 充足</p>
+    <div class="product-list">
+        <div class="product-card">
+            <img src="path_to_image/chatgpt_plus.jpg" alt="ChatGPT Plus 正规充值卡密">
+            <h3>ChatGPT Plus 正规充值卡密</h3>
+            <p class="price">¥150</p>
+            <p>库存：充足</p>
+            <button>立即购买</button>
         </div>
 
-        <div class="product">
-            <img src="path_to_image.jpg" alt="ChatGPT Plus"/>
-            <h2>ChatGPT Plus 共享账号</h2>
-            <p>价格: ¥108</p>
-            <p>库存: 充足</p>
+        <div class="product-card">
+            <img src="path_to_image/chatgpt_share_account.jpg" alt="ChatGPT Plus 共享账号">
+            <h3>ChatGPT Plus 共享账号</h3>
+            <p class="price">¥108</p>
+            <p>库存：充足</p>
+            <button>立即购买</button>
         </div>
 
-        <div class="product">
-            <img src="path_to_image.jpg" alt="ChatGPT Plus"/>
-            <h2>ChatGPT Plus 人工代充</h2>
-            <p>价格: ¥158</p>
-            <p>库存: 充足</p>
+        <div class="product-card">
+            <img src="path_to_image/chatgpt_plus_account.jpg" alt="ChatGPT Plus 独享账号">
+            <h3>ChatGPT Plus 独享账号</h3>
+            <p class="price">¥150</p>
+            <p>库存：充足</p>
+            <button>立即购买</button>
+        </div>
+
+        <div class="product-card">
+            <img src="path_to_image/chatgpt_ai_recharge.jpg" alt="ChatGPT Plus 人工代充">
+            <h3>ChatGPT Plus 人工代充</h3>
+            <p class="price">¥158</p>
+            <p>库存：充足</p>
+            <button>立即购买</button>
         </div>
     </div>
 
+    <div class="contact-info">
+        <p><strong>联系方式：</strong></p>
+        <p>微信：19268403019</p>
+        <p>QQ：3750786731</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AI科技城 版权所有</p>
+    </footer>
 </body>
 </html>
