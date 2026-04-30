@@ -1,0 +1,67 @@
+{
+  "siteName": "AI科技城",
+  "contact": "微信：18759568325",
+  "notice": "全程有质保！支持售后咨询",
+  "products": [
+    {
+      "name": "ChatGPT Plus 独享",
+      "price": "128元/月",
+      "desc": "正规充值170元，特价128元，可给新号，有质保",
+      "tag": "热销"
+    },
+    {
+      "name": "ChatGPT Go",
+      "price": "450元/年",
+      "desc": "稳定使用，适合长期用户",
+      "tag": "推荐"
+    },
+    {
+      "name": "ChatGPT Plus 共享",
+      "price": "65元/月",
+      "desc": "三个月165元，六个月290元，一年550元",
+      "tag": "低价"
+    },
+    {
+      "name": "ChatGPT Pro",
+      "price": "530元起",
+      "desc": "正价5倍820元/20倍1600元，特价5倍530元/20倍980元",
+      "tag": "高端"
+    },
+    {
+      "name": "Gemini Pro",
+      "price": "128元/年",
+      "desc": "谷歌AI模型，稳定高速",
+      "tag": "推荐"
+    },
+    {
+      "name": "Google账号",
+      "price": "35元",
+      "desc": "全新账号，稳定使用",
+      "tag": ""
+    },
+    {
+      "name": "Claude 普号",
+      "price": "35元",
+      "desc": "适合轻度使用",
+      "tag": ""
+    },
+    {
+      "name": "Claude Pro",
+      "price": "168元",
+      "desc": "官方178，特价168",
+      "tag": "推荐"
+    },
+    {
+      "name": "ChatGPT Share 六合一号池",
+      "price": "5元起",
+      "desc": "天卡5元，周卡30元，月卡90元，季卡220元，半年410元，一年720元",
+      "tag": "性价比"
+    },
+    {
+      "name": "Super Grok",
+      "price": "188元/月",
+      "desc": "高性能AI模型",
+      "tag": "新"
+    }
+  ]
+}
