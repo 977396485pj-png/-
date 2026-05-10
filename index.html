@@ -1,277 +1,142 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI科技城</title>
+  <title>AI科技城 - 高性价比AI账号</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- tsParticles -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/3.9.1/tsparticles.bundle.min.js"></script>
+
   <style>
-    /* 基本样式 */
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
+      background: #0a0a0a;
+      font-family: 'Microsoft YaHei', system-ui, sans-serif;
+      overflow-x: hidden;
     }
-
-    header {
-      background-color: #f6c700;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
-
-    header h1 {
-      margin: 0;
-      color: #fff;
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
-
-    .category-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 20px;
+    .neon-text {
+      text-shadow: 0 0 25px #67e8f9, 0 0 40px #c084fc;
     }
-
-    .category {
-      width: 200px;
-      text-align: center;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 10px;
-      cursor: pointer;
-      margin: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .category:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      transform: scale(1.05);
-    }
-
-    .category h2 {
-      font-size: 18px;
-      margin: 10px 0;
-      color: #333;
-    }
-
-    .subcategory {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .product {
-      margin: 10px 0;
-      padding: 10px;
-      background-color: #f9f9f9;
-      border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    .product h3 {
-      margin: 0;
-      font-size: 16px;
-      color: #333;
-    }
-
-    .product p {
-      margin: 5px 0;
-      color: #666;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .announcement {
-      background-color: #ffef00;
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 20px;
-      border-radius: 10px;
-    }
-
-    .announcement h2 {
-      margin: 0;
-      color: #333;
-    }
-
-    .announcement a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    .announcement a:hover {
-      text-decoration: underline;
+    .content {
+      position: relative;
+      z-index: 10;
     }
   </style>
 </head>
-<body>
+<body class="text-white min-h-screen">
+  <!-- 粒子背景 -->
+  <div id="tsparticles"></div>
 
-  <header>
-    <h1>AI科技城</h1>
-  </header>
+  <div class="content max-w-4xl mx-auto px-6 py-12">
+    <!-- 头部 -->
+    <div class="text-center mb-12">
+      <h1 class="text-6xl font-bold mb-4 neon-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        AI科技城
+      </h1>
+      <p class="text-xl text-cyan-300">5年老店 · 超高性价比 · 品质保障</p>
+    </div>
 
-  <div class="announcement">
-    <h2>【公告】5年老店，超高性价比，低价实惠带品质保障。任意问题均可私信老板，售后无忧。微信：19268403019，QQ：3750786731<br>
-    【号池ChatShare.Art】，六大AI Plus会员模型，具体介绍点我查看，网址：<a href="http://chatshare.art" target="_blank">chatshare.art</a></h2>
-  </div>
-
-  <div class="category-container">
-    <!-- ChatGPT Plus Category -->
-    <div class="category" onclick="toggleSubcategory('chatgpt-plus')">
-      <h2>ChatGPT Plus</h2>
-      <div id="chatgpt-plus" class="subcategory">
-        <div class="product">
-          <h3>ChatGPT Plus 正规充值一月</h3>
-          <p>价格：￥170</p>
-          <button onclick="buyProduct('chatgpt-plus-170')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>ChatGPT Plus 特价一月</h3>
-          <p>价格：￥128</p>
-          <button onclick="buyProduct('chatgpt-plus-128')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>ChatGPT Plus 共享一个月卡</h3>
-          <p>价格：￥65</p>
-          <button onclick="buyProduct('chatgpt-plus-shared')">立即购买</button>
+    <!-- 公告 -->
+    <div class="glass rounded-3xl p-10 shadow-2xl mb-10 border border-cyan-500/30">
+      <div class="flex items-center gap-4 mb-6">
+        <i class="fa-solid fa-bullhorn text-3xl text-yellow-400"></i>
+        <h2 class="text-3xl font-semibold">重要公告</h2>
+      </div>
+      <div class="space-y-6 text-lg">
+        <p class="leading-relaxed">
+          5年老店，超高性价比，低价实惠带品质保障。<br>
+          任意问题均可私信老板，售后无忧。
+        </p>
+        
+        <div class="flex flex-wrap gap-6 justify-center text-xl">
+          <div class="flex items-center gap-3 bg-white/10 px-6 py-3 rounded-2xl">
+            <i class="fa-brands fa-weixin text-green-400"></i>
+            <span><strong>微信：</strong> 19268403019</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white/10 px-6 py-3 rounded-2xl">
+            <i class="fa-brands fa-qq text-blue-400"></i>
+            <span><strong>QQ：</strong> 3750786731</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ChatGPT Pro Category -->
-    <div class="category" onclick="toggleSubcategory('chatgpt-pro')">
-      <h2>ChatGPT Pro</h2>
-      <div id="chatgpt-pro" class="subcategory">
-        <div class="product">
-          <h3>ChatGPT Pro 正价5倍</h3>
-          <p>价格：￥820</p>
-          <button onclick="buyProduct('chatgpt-pro-820')">立即购买</button>
+    <!-- 主产品 -->
+    <div class="glass rounded-3xl p-10 shadow-2xl border border-purple-500/30">
+      <h2 class="text-4xl font-bold mb-8 text-center">【号池】ChatShare.Art</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-2xl mb-6 leading-relaxed text-cyan-100">
+            六大AI Plus会员模型<br>
+            <span class="text-cyan-400">国内直连 · 稳定高速</span>
+          </p>
+          
+          <a href="http://chatshare.art" target="_blank"
+             class="block w-full text-center bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 
+                    text-white font-bold text-xl py-6 rounded-2xl transition-all hover:scale-105 shadow-lg">
+            立即查看详情 →
+          </a>
         </div>
-        <div class="product">
-          <h3>ChatGPT Pro 特价5倍</h3>
-          <p>价格：￥530</p>
-          <button onclick="buyProduct('chatgpt-pro-530')">立即购买</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Claude Category -->
-    <div class="category" onclick="toggleSubcategory('claude')">
-      <h2>Claude</h2>
-      <div id="claude" class="subcategory">
-        <div class="product">
-          <h3>Claude 普号</h3>
-          <p>价格：￥35</p>
-          <button onclick="buyProduct('claude-35')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>Claude Pro</h3>
-          <p>价格：￥168</p>
-          <button onclick="buyProduct('claude-pro')">立即购买</button>
+        
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-32 h-32 rounded-full border-4 border-cyan-400/50 bg-gradient-to-br from-purple-500/20 to-cyan-500/20">
+            <i class="fa-solid fa-robot text-7xl text-cyan-300"></i>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ChatGPT Share Category -->
-    <div class="category" onclick="toggleSubcategory('chatgpt-share')">
-      <h2>ChatGPT Share</h2>
-      <div id="chatgpt-share" class="subcategory">
-        <div class="product">
-          <h3>天卡</h3>
-          <p>价格：￥5</p>
-          <button onclick="buyProduct('chatgpt-share-tian')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>周卡</h3>
-          <p>价格：￥30</p>
-          <button onclick="buyProduct('chatgpt-share-week')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>月卡</h3>
-          <p>价格：￥90</p>
-          <button onclick="buyProduct('chatgpt-share-month')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>季卡</h3>
-          <p>价格：￥220</p>
-          <button onclick="buyProduct('chatgpt-share-season')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>半年卡</h3>
-          <p>价格：￥410</p>
-          <button onclick="buyProduct('chatgpt-share-halfyear')">立即购买</button>
-        </div>
-        <div class="product">
-          <h3>一年卡</h3>
-          <p>价格：￥720</p>
-          <button onclick="buyProduct('chatgpt-share-year')">立即购买</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Super Grok Category -->
-    <div class="category" onclick="toggleSubcategory('super-grok')">
-      <h2>Super Grok</h2>
-      <div id="super-grok" class="subcategory">
-        <div class="product">
-          <h3>Super Grok 一个月</h3>
-          <p>价格：￥188</p>
-          <button onclick="buyProduct('super-grok')">立即购买</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 普通账号 Category -->
-    <div class="category" onclick="toggleSubcategory('common-account')">
-      <h2>普通账号</h2>
-      <div id="common-account" class="subcategory">
-        <div class="product">
-          <h3>Google账号</h3>
-          <p>价格：￥35</p>
-          <button onclick="buyProduct('google-account')">立即购买</button>
-        </div>
-      </div>
+    <div class="text-center mt-12 text-gray-400">
+      <p>✅ 五年老店 · 售后无忧 · 品质优先</p>
     </div>
   </div>
+
+  <footer class="text-center py-8 text-gray-500 text-sm relative z-10">
+    AI科技城 © 2026 | 私信老板获取更多服务
+  </footer>
 
   <script>
-    function toggleSubcategory(categoryId) {
-      const category = document.getElementById(categoryId);
-      if (category.style.display === 'none' || category.style.display === '') {
-        category.style.display = 'block';
-      } else {
-        category.style.display = 'none';
-      }
-    }
-
-    function buyProduct(productId) {
-      // Alipay Payment
-      window.location.href = 'https://qr.alipay.com/fkx163781mj6oyfpigqp28c'; // Alipay link
-      setTimeout(() => {
-        alert("感谢购买！\n请添加微信19268403019进行账户激活。\n点击按钮复制微信号码");
-        copyContact('19268403019');
-      }, 5000);
-    }
-
-    function copyContact(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("联系方式已复制：" + text);
-      }).catch(() => {
-        alert("请手动复制：" + text);
-      });
-    }
+    tsParticles.load("tsparticles", {
+      background: { color: "#0a0a0a" },
+      fpsLimit: 120,
+      particles: {
+        color: { value: ["#67e8f9", "#c084fc", "#a5b4fc"] },
+        links: { color: "#64748b", distance: 150, enable: true, opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 0.8, direction: "none", random: false, straight: false, outModes: "out" },
+        number: { value: 80, density: { enable: true, area: 800 } },
+        opacity: { value: 0.6, random: true },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 4 } }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 120, duration: 0.4 },
+          push: { quantity: 4 }
+        }
+      },
+      detectRetina: true
+    });
   </script>
 </body>
 </html>
